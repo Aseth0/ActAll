@@ -8,7 +8,7 @@ else
         apt-get update -y
         echo -e '\e[1;33m===Haciendo upgrade===\e[0m'
         apt-get upgrade -y
-        echo -e '\e[1;33m===Actualizando firmeare===\e[0m'
+        echo -e '\e[1;33m===Actualizando firmware===\e[0m'
         rpi-update -y
         echo -e '\e[1;33mTodo listo, vamos a reiniciar\e[0m'
         sleep 10s
