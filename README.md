@@ -1,4 +1,10 @@
 # ActAll
-Scrip Básico para actualizar todo el sistema Raspbian 
+Basic Script for do a full update in a RaspBerryPi 4.
 
-Es un sript escrito enteramente en Bash para hacer más rápidos el update, upgrade y la actualización del firmware de raspbian
+The script:
+- apt-get update
+- apt-get upgrade
+- rpi-update
+
+if you use the argument '-y' the script do a reboot of the sistem automatically,
+however if you don't put any arguments, the script ask you if you want to reboot the sistem.
