@@ -1,15 +1,35 @@
 #!/bin/bash
+checkreboot='0'
+
 if [ "$EUID" -ne 0 ]
 then 
-	printf "Please run as root"
-	exit
+        echo "Please run as root\n"
+        exit
 else
-	echo -e '\e[1;33m==Haciendo update===\e[0m'
+        echo -e '\e[1;33m===Haciendo update===\e[0m'
         apt-get update -y
         echo -e '\e[1;33m===Haciendo upgrade===\e[0m'
         apt-get upgrade -y
-        echo -e '\e[1;33m===Actualizando firmware===\e[0m'
+        echo -e '\e[1;33m===Actualizando firmeare===\e[0m'
         rpi-update -y
-        echo -e '\e[1;33mTodo listo, vamos a reiniciar\e[0m'
-        sleep 10s
+
+        echo -e '\e[1;33mIts all ready.\e[0m'
+	if [ $# -eq 0 ]
+        then
+                while [ $checkreboot != 'y' ] || [  $checkreboot != 'n'  ]; do
+
+                echo -e '\e[1;33mDo you want to reboot the system? [S/N]: \e[0m' ; read  checkreboot
+
+                if [ $checkreboot == 'y' ];
+                then
+                        reboot 
+                elif [ $checkreboot == 'n' ];
+                then
+                        exit 0
+                fi
+                done
+	elif [ $1 == '-y' ]
+	then
+		reboot
+	fi
 fi
