@@ -1,5 +1,5 @@
 # ActAll
-Basic Script for do a full update in a RaspBerryPi 4.
+Basic Script for does a full update in a RaspBerryPi 4.
 
 The script:
 - apt-get update
