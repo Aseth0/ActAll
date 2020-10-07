@@ -6,5 +6,5 @@ The script:
 - apt-get upgrade
 - rpi-update
 
-if you use the argument '-y' the script do a reboot of the system automatically,
+if you use the argument '-y' the script does a reboot of the system automatically,
 however if you don't put any arguments, the script ask you if you want to reboot the system.
